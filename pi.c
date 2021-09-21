@@ -1,10 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <pthread.h>
 
 int r[500000 + 1];
 int c = 0;
-int b, d, i, k;
+int g = 0;
+int b, d, i, k, z;
 
-int main() {
+void *multiThread(void *vargp) {
+	int *threadid = (int *)vargp;
+	static int s = 0;
+	s++;
+	g++;
+	printf("Thread ID: %d, Static: %d, Global: %d\n", *threadid, s++, g++);	
+}
+
+void piCalc() {
 	for (int i = 0; i < 500000; i++) {
 		r[i] = 2000;
 	}
@@ -26,5 +38,13 @@ int main() {
 		c = d % 10000;
 	}
 	printf("\n");
-	return 0;
+}
+
+int main() {
+    	pthread_t tid;
+    	for (z = 0; z < 3; z++)
+        	pthread_create(&tid, NULL, multiThread, (void *)&tid);
+		piCalc();
+    	pthread_exit(NULL);
+    	return 0;
 }
