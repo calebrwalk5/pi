@@ -1,0 +1,4 @@
+# pi
+calculate pi with the following formula
+2(1+1/3(1+2/5(1+(1+(2799/(2*2799)+1)))))
+source: https://mathworld.wolfram.com/PiFormulas.html
