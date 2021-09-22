@@ -18,7 +18,7 @@ void *multiThread(void *vargp) {
 
 void piCalc() {
 	for (int i = 0; i < 500000; i++) {
-		r[i] = 2000;
+		r[i] = 2800;
 	}
 	for (k = 500000; k > 0; k -= 14) {
 		d = 0;
