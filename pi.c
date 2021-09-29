@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <pthread.h>
 
-int r[500000 + 1];
+int r[2800 + 1];
 int c = 0;
 int g = 0;
 int b, d, i, k, z;
@@ -17,10 +17,10 @@ void *multiThread(void *vargp) {
 }
 
 void piCalc() {
-	for (int i = 0; i < 500000; i++) {
-		r[i] = 2800;
+	for (int i = 0; i < 2800; i++) {
+		r[i] = 2000;
 	}
-	for (k = 500000; k > 0; k -= 14) {
+	for (k = 2800; k > 0; k -= 14) {
 		d = 0;
 		i = k;
 		for (;;) {
