@@ -42,7 +42,7 @@ void piCalc() {
 
 int main() {
     	pthread_t tid;
-    	for (z = 0; z < 5; z++)
+    	for (z = 0; z < 3; z++)
         	pthread_create(&tid, NULL, multiThread, (void *)&tid);
 		piCalc();
     	pthread_exit(NULL);
