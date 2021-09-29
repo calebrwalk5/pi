@@ -13,7 +13,6 @@ void *multiThread(void *vargp) {
 	static int s = 0;
 	s++;
 	g++;
-	printf("Thread ID: %d, Static: %d, Global: %d\n", *threadid, s++, g++);	
 }
 
 void piCalc() {
